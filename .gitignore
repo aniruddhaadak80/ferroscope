@@ -54,3 +54,4 @@ generated/
 
 # local Playwright browsers (this host's cache is unstable)
 .playwright-browsers/
+.vercel

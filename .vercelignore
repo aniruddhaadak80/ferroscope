@@ -1,0 +1,15 @@
+node_modules
+**/node_modules
+.next
+**/.next
+.turbo
+**/.turbo
+.playwright-browsers
+playwright-report
+blob-report
+test-results
+coverage
+.vercel
+.git
+.github
+docs/assets

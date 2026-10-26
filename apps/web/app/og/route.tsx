@@ -1,6 +1,9 @@
 import { ImageResponse } from "next/og";
 
-export const runtime = "edge";
+// Node runtime, not Edge: the Vercel `services` deployment target used by this
+// repo rejects Edge Function output (see vercel.json). ImageResponse works the
+// same on both runtimes.
+export const runtime = "nodejs";
 export const alt = "Ferroscope — map your blast radius before the breach does";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
