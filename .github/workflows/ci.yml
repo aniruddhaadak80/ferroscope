@@ -54,7 +54,7 @@ jobs:
         run: bun scripts/count-routes.mjs
       - name: Check stylesheet wiring
         run: bun run check:css
-      - uses: actions/upload-artifact@v4
+      - uses: actions/upload-artifact@v7
         with:
           name: next-build
           path: apps/web/.next
@@ -80,7 +80,7 @@ jobs:
         run: bun run test:e2e
         env:
           CI: "true"
-      - uses: actions/upload-artifact@v4
+      - uses: actions/upload-artifact@v7
         if: failure()
         with:
           name: playwright-report
