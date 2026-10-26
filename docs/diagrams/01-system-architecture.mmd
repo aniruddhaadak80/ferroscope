@@ -1,0 +1,51 @@
+flowchart LR
+  subgraph browser["Browser · no account, no cookie"]
+    UI["apps/web<br/>React 19 client views"]
+    STORE["zustand + persist<br/>ferroscope.profile.v1"]
+  end
+
+  subgraph edge["Vercel edge / Node runtime"]
+    RSC["React Server Components<br/>95 addressable URLs"]
+    API["/api/*<br/>stateless handlers"]
+  end
+
+  subgraph engine["packages/core · pure TypeScript"]
+    MATCH["exposure.ts<br/>matcher + saturation"]
+    GRAPH["blast.ts<br/>FNV-1a radial layout"]
+    CASCADE["cascade.ts<br/>12 deterministic frames"]
+    PLAN["planner.ts<br/>risk per minute"]
+    TRUST["trust.ts<br/>certificate ledger"]
+  end
+
+  subgraph data["packages/seed · files in git"]
+    INC["27 incidents"]
+    STACK["55 stack items"]
+    ACT["24 actions"]
+    PB["8 playbooks"]
+    CERT["5 certificate records"]
+  end
+
+  UI --> STORE
+  UI -->|"POST profile JSON"| API
+  RSC --> UI
+  API --> MATCH
+  API --> GRAPH
+  API --> CASCADE
+  API --> PLAN
+  API --> TRUST
+  MATCH --> INC
+  MATCH --> STACK
+  PLAN --> ACT
+  TRUST --> CERT
+  RSC --> INC
+  RSC --> PB
+  BROWSER_NOTE["Profile never persisted server-side<br/>ADR-0003"] -.-> API
+
+  classDef client fill:#0f1114,stroke:#f0a63c,color:#f2eee4
+  classDef server fill:#0f1114,stroke:#8fb996,color:#f2eee4
+  classDef core fill:#0f1114,stroke:#e5644a,color:#f2eee4
+  classDef seed fill:#0f1114,stroke:#9a9b9e,color:#f2eee4
+  class UI,STORE client
+  class RSC,API server
+  class MATCH,GRAPH,CASCADE,PLAN,TRUST core
+  class INC,STACK,ACT,PB,CERT seed

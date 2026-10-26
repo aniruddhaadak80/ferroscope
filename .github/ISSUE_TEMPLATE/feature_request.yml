@@ -1,0 +1,52 @@
+name: Feature request
+description: Propose a capability, a view, or a model change.
+title: "feat: "
+labels: ["enhancement", "needs-triage"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        The roadmap has a refusal list on purpose. Features that require an account, a live feed,
+        or an LLM in the explanation path will be declined — not because they are hard, but because
+        they break reproducibility.
+  - type: textarea
+    id: problem
+    attributes:
+      label: The problem
+      description: Describe the decision a person cannot make today.
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: The smallest version that helps
+      description: One route, one function, one field. Scope matters more than ambition.
+    validations:
+      required: true
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: What you tried instead
+  - type: dropdown
+    id: area
+    attributes:
+      label: Area
+      options:
+        - Exposure model
+        - Dataset
+        - Atlas or incident pages
+        - Blast radius or cascade
+        - Planner
+        - Reports and export
+        - Accessibility
+        - Performance
+        - Developer experience
+        - Deployment
+  - type: checkboxes
+    id: constraints
+    attributes:
+      label: Constraints
+      options:
+        - label: This can work with no database and no user account.
+        - label: This can work offline, from files in the repository.
+        - label: This does not require an LLM at request time.

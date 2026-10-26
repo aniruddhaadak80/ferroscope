@@ -1,0 +1,19 @@
+gantt
+  title Ferroscope roadmap
+  dateFormat YYYY-MM-DD
+  axisFormat %d %b
+  section Shipped
+  27-incident dataset            :done, d1, 2026-10-21, 3d
+  Exposure engine + 54 tests     :done, d2, 2026-10-21, 2d
+  Atlas, graph, cascade, planner :done, d3, 2026-10-22, 2d
+  ADRs, guides, runbooks         :done, d4, 2026-10-23, 2d
+  0.1.0 public release           :milestone, m1, 2026-10-24, 0d
+  section Next
+  Dataset diffing between snaps  :active, n1, 2026-10-27, 10d
+  Per-package patch levels       :n2, after n1, 12d
+  URL-fragment comparison links  :n3, after n2, 7d
+  Axe audit in CI                :n4, after n1, 5d
+  section Later
+  Optional local-only scanner    :l1, 2026-12-01, 30d
+  Manifest import to prefill     :l2, after l1, 20d
+  Playbook progress per profile  :l3, after l2, 10d

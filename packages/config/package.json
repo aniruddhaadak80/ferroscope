@@ -1,0 +1,14 @@
+{
+  "name": "@ferroscope/config",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Shared TypeScript and Vitest configuration.",
+  "exports": {
+    "./tsconfig.base.json": "./tsconfig.base.json",
+    "./vitest.base.ts": "./vitest.base.ts"
+  },
+  "scripts": {
+    "typecheck": "tsc --noEmit -p tsconfig.json"
+  }
+}

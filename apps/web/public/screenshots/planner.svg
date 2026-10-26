@@ -1,0 +1,113 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1440" height="960" viewBox="0 0 1440 960" fill="none" role="img" aria-label="Fix the cheapest thing first.">
+  <rect width="1440" height="960" fill="#08090b"/>
+  <rect y="0" width="1440" height="64" fill="#0f1114"/>
+  <rect y="63.5" width="1440" height="1" fill="#24282e"/>
+  <circle cx="28" cy="32" r="5" fill="#e5644a" fill-opacity="0.7"/>
+  <circle cx="46" cy="32" r="5" fill="#f0a63c" fill-opacity="0.7"/>
+  <circle cx="64" cy="32" r="5" fill="#8fb996" fill-opacity="0.7"/>
+  <text x="150" y="37" fill="#f2eee4" font-family="'JetBrains Mono', monospace" font-size="13" letter-spacing="6">FERROSCOPE</text>
+  <text x="420" y="37" fill="#9a9b9e" font-family="'JetBrains Mono', monospace" font-size="11" letter-spacing="3">ATLAS</text>
+  <text x="505" y="37" fill="#9a9b9e" font-family="'JetBrains Mono', monospace" font-size="11" letter-spacing="3">BLAST RADIUS</text>
+  <text x="640" y="37" fill="#9a9b9e" font-family="'JetBrains Mono', monospace" font-size="11" letter-spacing="3">PLANNER</text>
+  <text x="740" y="37" fill="#9a9b9e" font-family="'JetBrains Mono', monospace" font-size="11" letter-spacing="3">LEDGER</text>
+  <text x="820" y="37" fill="#9a9b9e" font-family="'JetBrains Mono', monospace" font-size="11" letter-spacing="3">PLAYBOOKS</text>
+  <rect x="1268" y="18" width="144" height="28" fill="none" stroke="#24282e"/>
+  <text x="1282" y="37" fill="#9a9b9e" font-family="'JetBrains Mono', monospace" font-size="10" letter-spacing="2">SEARCH  ⌘K</text>
+
+  <g transform="translate(56 128)">
+    <text fill="#f0a63c" font-family="'JetBrains Mono', monospace" font-size="12" letter-spacing="5">PLANNER / RISK REMOVED PER MINUTE</text>
+    <text y="76" fill="#f2eee4" font-family="Georgia, serif" font-size="58" letter-spacing="-2">Fix the cheapest thing first.</text>
+  </g>
+
+  
+  <g transform="translate(56 260)">
+    <rect x="0" y="0" width="940" height="600" fill="#0f1114" stroke="#24282e"/>
+    
+      <rect x="0" y="62" width="940" height="1" fill="#24282e"/>
+      <rect x="20" y="82" width="18" height="18" fill="#8fb996" stroke="#8fb996"/>
+      <text x="66" y="98" fill="#6b6d72" font-family="system-ui, sans-serif" font-size="15">Refresh the Python CA bundle</text>
+      <text x="66" y="120" fill="#6b6d72" font-family="system-ui, sans-serif" font-size="11">3 minutes · 85% covered</text>
+      <rect x="640" y="90" width="120" height="4" fill="#24282e"/>
+      <rect x="640" y="90" width="104" height="4" fill="#f0a63c"/>
+      <text x="640" y="116" fill="#f0a63c" font-family="'JetBrains Mono', monospace" font-size="9">3.53/min</text>
+      <text x="820" y="98" fill="#f2eee4" font-family="'JetBrains Mono', monospace" font-size="13">−12 pts</text>
+      
+      <rect x="0" y="160" width="940" height="1" fill="#24282e"/>
+      <rect x="20" y="180" width="18" height="18" fill="#8fb996" stroke="#8fb996"/>
+      <text x="66" y="196" fill="#6b6d72" font-family="system-ui, sans-serif" font-size="15">Turn on phishing-resistant 2FA</text>
+      <text x="66" y="218" fill="#6b6d72" font-family="system-ui, sans-serif" font-size="11">12 minutes · 60% covered</text>
+      <rect x="640" y="188" width="120" height="4" fill="#24282e"/>
+      <rect x="640" y="188" width="72" height="4" fill="#f0a63c"/>
+      <text x="640" y="214" fill="#f0a63c" font-family="'JetBrains Mono', monospace" font-size="9">2.1/min</text>
+      <text x="820" y="196" fill="#f2eee4" font-family="'JetBrains Mono', monospace" font-size="13">−9 pts</text>
+      
+      <rect x="0" y="258" width="940" height="1" fill="#24282e"/>
+      <rect x="20" y="278" width="18" height="18" fill="none" stroke="#24282e"/>
+      <text x="66" y="294" fill="#f2eee4" font-family="system-ui, sans-serif" font-size="15">Install every pending Windows update</text>
+      <text x="66" y="316" fill="#6b6d72" font-family="system-ui, sans-serif" font-size="11">15 minutes · 55% covered</text>
+      <rect x="640" y="286" width="120" height="4" fill="#24282e"/>
+      <rect x="640" y="286" width="66" height="4" fill="#f0a63c"/>
+      <text x="640" y="312" fill="#f0a63c" font-family="'JetBrains Mono', monospace" font-size="9">1.6/min</text>
+      <text x="820" y="294" fill="#f2eee4" font-family="'JetBrains Mono', monospace" font-size="13">−7 pts</text>
+      
+      <rect x="0" y="356" width="940" height="1" fill="#24282e"/>
+      <rect x="20" y="376" width="18" height="18" fill="none" stroke="#24282e"/>
+      <text x="66" y="392" fill="#f2eee4" font-family="system-ui, sans-serif" font-size="15">Rotate SBI credentials and UPI PIN</text>
+      <text x="66" y="414" fill="#6b6d72" font-family="system-ui, sans-serif" font-size="11">10 minutes · 80% covered</text>
+      <rect x="640" y="384" width="120" height="4" fill="#24282e"/>
+      <rect x="640" y="384" width="58" height="4" fill="#f0a63c"/>
+      <text x="640" y="410" fill="#f0a63c" font-family="'JetBrains Mono', monospace" font-size="9">1.3/min</text>
+      <text x="820" y="392" fill="#f2eee4" font-family="'JetBrains Mono', monospace" font-size="13">−6 pts</text>
+      
+      <rect x="0" y="454" width="940" height="1" fill="#24282e"/>
+      <rect x="20" y="474" width="18" height="18" fill="none" stroke="#24282e"/>
+      <text x="66" y="490" fill="#f2eee4" font-family="system-ui, sans-serif" font-size="15">Audit GitHub Actions across your repos</text>
+      <text x="66" y="512" fill="#6b6d72" font-family="system-ui, sans-serif" font-size="11">30 minutes · 60% covered</text>
+      <rect x="640" y="482" width="120" height="4" fill="#24282e"/>
+      <rect x="640" y="482" width="44" height="4" fill="#f0a63c"/>
+      <text x="640" y="508" fill="#f0a63c" font-family="'JetBrains Mono', monospace" font-size="9">0.9/min</text>
+      <text x="820" y="490" fill="#f2eee4" font-family="'JetBrains Mono', monospace" font-size="13">−4 pts</text>
+      
+  </g>
+
+  <g transform="translate(1020 260)">
+    <rect x="0" y="0" width="364" height="260" fill="#0f1114" stroke="#24282e"/>
+    <text x="24" y="32" fill="#6b6d72" font-family="'JetBrains Mono', monospace" font-size="10" letter-spacing="3">RESIDUAL RISK</text>
+    <circle cx="100" cy="140" r="54" stroke="#24282e"/>
+    <circle cx="100" cy="140" r="54" stroke="#e5644a" stroke-width="5" stroke-dasharray="189.84000000000003 339" transform="rotate(-90 100 140)"/>
+    <text x="100" y="150" fill="#f2eee4" font-family="Georgia, serif" font-size="34" text-anchor="middle">19</text>
+    <text x="196" y="122" fill="#6b6d72" font-family="'JetBrains Mono', monospace" font-size="10" letter-spacing="3">BASELINE 56</text>
+    <text x="196" y="156" fill="#8fb996" font-family="Georgia, serif" font-size="30">−37</text>
+    <text x="196" y="180" fill="#6b6d72" font-family="'JetBrains Mono', monospace" font-size="10" letter-spacing="3">POINTS REMOVED</text>
+    <rect x="24" y="218" width="316" height="1" fill="#24282e"/>
+    <text x="24" y="242" fill="#6b6d72" font-family="'JetBrains Mono', monospace" font-size="10" letter-spacing="3">34 MIN OF WORK LEFT</text>
+
+    <rect x="0" y="280" width="364" height="320" fill="#0f1114" stroke="#24282e"/>
+    <text x="24" y="312" fill="#6b6d72" font-family="'JetBrains Mono', monospace" font-size="10" letter-spacing="3">COVERAGE</text>
+    
+      <text x="24" y="350" fill="#9a9b9e" font-family="system-ui, sans-serif" font-size="12">eMudhra</text>
+      <text x="310" y="350" fill="#f0a63c" font-family="'JetBrains Mono', monospace" font-size="11" text-anchor="end">3</text>
+      <rect x="24" y="360" width="316" height="1" fill="#24282e"/>
+    
+      <text x="24" y="394" fill="#9a9b9e" font-family="system-ui, sans-serif" font-size="12">SBI breach</text>
+      <text x="310" y="394" fill="#f0a63c" font-family="'JetBrains Mono', monospace" font-size="11" text-anchor="end">3</text>
+      <rect x="24" y="404" width="316" height="1" fill="#24282e"/>
+    
+      <text x="24" y="438" fill="#9a9b9e" font-family="system-ui, sans-serif" font-size="12">PHP2Shell</text>
+      <text x="310" y="438" fill="#f0a63c" font-family="'JetBrains Mono', monospace" font-size="11" text-anchor="end">1</text>
+      <rect x="24" y="448" width="316" height="1" fill="#24282e"/>
+    
+      <text x="24" y="482" fill="#9a9b9e" font-family="system-ui, sans-serif" font-size="12">LiteLLM</text>
+      <text x="310" y="482" fill="#f0a63c" font-family="'JetBrains Mono', monospace" font-size="11" text-anchor="end">2</text>
+      <rect x="24" y="492" width="316" height="1" fill="#24282e"/>
+    
+      <text x="24" y="526" fill="#9a9b9e" font-family="system-ui, sans-serif" font-size="12">GitLab RCE</text>
+      <text x="310" y="526" fill="#f0a63c" font-family="'JetBrains Mono', monospace" font-size="11" text-anchor="end">1</text>
+      <rect x="24" y="536" width="316" height="1" fill="#24282e"/>
+    
+  </g>
+
+
+  <rect y="930" width="1440" height="30" fill="#0f1114"/>
+  <text x="56" y="950" fill="#6b6d72" font-family="'JetBrains Mono', monospace" font-size="10" letter-spacing="3">MIT © 2026 ANIRUDDHA ADAK · SEED 2718 · NO TELEMETRY</text>
+</svg>

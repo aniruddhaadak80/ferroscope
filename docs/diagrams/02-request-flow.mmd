@@ -1,0 +1,26 @@
+sequenceDiagram
+  autonumber
+  actor U as You
+  participant UI as /profile (client)
+  participant LS as localStorage
+  participant API as /api/exposure
+  participant CORE as packages/core
+  participant SEED as packages/seed
+
+  U->>UI: toggle "NGINX"
+  UI->>LS: persist ferroscope.profile.v1
+  UI->>CORE: computeExposure(profile, INCIDENTS, STACK)
+  CORE->>SEED: read incidents + stack weights
+  CORE-->>UI: report { risk, score, band, matches }
+  Note over UI: instant, offline, no network
+
+  U->>API: POST /api/exposure { profile }
+  API->>API: zod validate
+  alt invalid
+    API-->>U: 422 { code: invalid_profile, details }
+  else valid
+    API->>CORE: computeExposure(profile, ...)
+    CORE-->>API: report
+    API-->>U: 200 { report, profile }
+    Note over API: nothing written,<br/>nothing logged
+  end

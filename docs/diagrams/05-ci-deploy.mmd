@@ -1,0 +1,23 @@
+flowchart LR
+  DEV["git push<br/>main"] --> CI["CI · ubuntu<br/>bun 1.3.14"]
+  CI --> Q["typecheck<br/>tsc --noEmit × 6"]
+  Q --> L["lint<br/>biome check"]
+  L --> T["test<br/>80 vitest"]
+  T --> B["build<br/>next build · 95 URLs"]
+  B --> E["e2e<br/>playwright · chromium + firefox"]
+  B --> D["docker<br/>standalone image"]
+  D --> DS["container smoke<br/>/api/healthz"]
+  E --> OK{"all green?"}
+  DS --> OK
+  B --> V["Vercel build<br/>turbo --filter=@ferroscope/web"]
+  OK -->|yes| V
+  V --> PROD["ferroscope.vercel.app"]
+  D -.->|"optional"| FLY["Fly.io · bom"]
+  D -.->|"optional"| REN["Render · singapore"]
+
+  classDef ci fill:#0f1114,stroke:#f0a63c,color:#f2eee4
+  classDef gate fill:#0f1114,stroke:#8fb996,color:#f2eee4
+  classDef prod fill:#0f1114,stroke:#e5644a,color:#f2eee4
+  class CI,Q,L,T,B,E,D,DS,OK ci
+  class V gate
+  class PROD,FLY,REN prod

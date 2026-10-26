@@ -1,0 +1,83 @@
+classDiagram
+  class ExposureProfile {
+    +readonly string[] stack
+    +readonly string region
+    +readonly boolean bank
+    +readonly boolean passwordManager
+    +readonly boolean twoFactor
+    +readonly boolean autoUpdates
+  }
+  class Incident {
+    +readonly string slug
+    +readonly string name
+    +readonly string headline
+    +readonly Severity severity
+    +readonly number|null cvss
+    +readonly Vector vector
+    +readonly string[] affected
+    +readonly string[] mitigations
+    +readonly IncidentSource[] sources
+    +readonly IncidentTimelineEntry[] timeline
+  }
+  class StackItem {
+    +readonly string id
+    +readonly string label
+    +readonly StackCategory category
+    +readonly number riskWeight
+    +readonly boolean defaultOn
+  }
+  class IncidentMatch {
+    +readonly Incident incident
+    +readonly boolean matched
+    +readonly number confidence
+    +readonly string[] reasons
+    +readonly string[] missing
+    +readonly Severity effectiveSeverity
+    +readonly number contribution
+  }
+  class ExposureReport {
+    +readonly number score
+    +readonly number risk
+    +readonly RiskBand band
+    +readonly IncidentMatch[] matches
+    +readonly IncidentMatch[] exposed
+    +readonly number examinedStack
+  }
+  class RemediationAction {
+    +readonly string id
+    +readonly string title
+    +readonly number minutes
+    +readonly number reduces
+    +readonly Vector[] vectors
+    +readonly string[] incidentSlugs
+    +readonly string[] steps
+    +readonly string|null command
+  }
+  class ActionPlan {
+    +readonly RemediationAction action
+    +readonly string[] relevant
+    +readonly number riskReduced
+    +readonly number efficiency
+    +readonly boolean completed
+  }
+  class BlastGraph {
+    +readonly BlastNode[] nodes
+    +readonly BlastEdge[] edges
+    +readonly number width
+    +readonly number height
+  }
+  class CascadeResult {
+    +readonly Incident incident
+    +readonly CascadeFrame[] frames
+    +readonly number peakRisk
+    +readonly number ticks
+  }
+
+  ExposureProfile "1" --> "*" StackItem : declares
+  Incident "*" --> "*" StackItem : affects
+  ExposureReport "1" --> "*" IncidentMatch
+  IncidentMatch --> Incident
+  ExposureReport --> ActionPlan : ranks
+  RemediationAction --> ActionPlan
+  ExposureReport --> BlastGraph : renders
+  Incident --> CascadeResult

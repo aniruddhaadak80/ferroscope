@@ -1,0 +1,31 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "services": {
+    "web": {
+      "root": "apps/web",
+      "framework": "nextjs",
+      "installCommand": "cd ../.. && bun install --frozen-lockfile",
+      "buildCommand": "cd ../.. && bunx turbo run build --filter=@ferroscope/web --force",
+      "outputDirectory": ".next"
+    }
+  },
+  "rewrites": [{ "source": "/(.*)", "destination": { "service": "web" } }],
+  "github": {
+    "autoDeploy": true,
+    "silent": true
+  },
+  "env": {
+    "NEXT_PUBLIC_SIM_SEED": "2718",
+    "NEXT_PUBLIC_SITE_URL": "https://ferroscope.vercel.app"
+  },
+  "headers": [
+    {
+      "source": "/(.*)",
+      "headers": [
+        { "key": "X-Content-Type-Options", "value": "nosniff" },
+        { "key": "Referrer-Policy", "value": "strict-origin-when-cross-origin" },
+        { "key": "Permissions-Policy", "value": "camera=(), microphone=(), geolocation=()" }
+      ]
+    }
+  ]
+}

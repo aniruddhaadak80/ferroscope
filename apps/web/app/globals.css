@@ -1,0 +1,207 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@source "../../packages/ui/src";
+@source "./**/*.{ts,tsx}";
+
+:root {
+  --canvas: #f2eee4;
+  --surface: #fbf8f1;
+  --surface-2: #ece6d8;
+  --ink: #111318;
+  --muted: #5b5d63;
+  --faint: #8a8a8a;
+  --line: #d8d0c0;
+  --line-strong: #b9ae99;
+  --amber: #a85f00;
+  --amber-bright: #8a4e00;
+  --rust: #ac3420;
+  --rust-bright: #8f2a19;
+  --moss: #3c664b;
+  --grid: rgba(17, 19, 24, 0.055);
+  --selection: rgba(168, 95, 0, 0.18);
+  color-scheme: light;
+}
+
+.dark {
+  --canvas: #08090b;
+  --surface: #0f1114;
+  --surface-2: #16191e;
+  --ink: #f2eee4;
+  --muted: #9a9b9e;
+  --faint: #6b6d72;
+  --line: #24282e;
+  --line-strong: #363c44;
+  --amber: #f0a63c;
+  --amber-bright: #ffbe5c;
+  --rust: #e5644a;
+  --rust-bright: #f07a62;
+  --moss: #8fb996;
+  --grid: rgba(242, 238, 228, 0.05);
+  --selection: rgba(240, 166, 60, 0.24);
+  color-scheme: dark;
+}
+
+@theme inline {
+  --color-canvas: var(--canvas);
+  --color-surface: var(--surface);
+  --color-surface-2: var(--surface-2);
+  --color-ink: var(--ink);
+  --color-muted: var(--muted);
+  --color-faint: var(--faint);
+  --color-line: var(--line);
+  --color-line-strong: var(--line-strong);
+  --color-amber: var(--amber);
+  --color-amber-bright: var(--amber-bright);
+  --color-rust: var(--rust);
+  --color-rust-bright: var(--rust-bright);
+  --color-moss: var(--moss);
+  --color-ink-950: #08090b;
+
+  --font-sans: var(--font-manrope), ui-sans-serif, system-ui, sans-serif;
+  --font-display: var(--font-instrument), Georgia, "Times New Roman", serif;
+  --font-mono: var(--font-jetbrains), ui-monospace, "SFMono-Regular", monospace;
+}
+
+@layer base {
+  * {
+    border-color: var(--line);
+  }
+
+  html {
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    background-color: var(--canvas);
+    color: var(--ink);
+    font-family: var(--font-sans);
+    font-feature-settings: "ss01", "cv11";
+    text-rendering: optimizeLegibility;
+  }
+
+  ::selection {
+    background: var(--selection);
+    color: var(--ink);
+  }
+
+  a {
+    text-underline-offset: 4px;
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--amber);
+    outline-offset: 3px;
+  }
+
+  ::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: var(--canvas);
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: var(--line-strong);
+    border: 2px solid var(--canvas);
+  }
+}
+
+@keyframes ferro-marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
+
+@keyframes ferro-pulse {
+  0%,
+  100% {
+    opacity: 0.35;
+    transform: scale(0.85);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes ferro-rise {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes ferro-sweep {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(100%);
+  }
+}
+
+@utility animate-ferro-pulse {
+  animation: ferro-pulse 2.6s ease-in-out infinite;
+}
+
+@utility animate-ferro-rise {
+  animation: ferro-rise 0.7s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+@utility text-balance {
+  text-wrap: balance;
+}
+
+[cmdk-overlay] {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  background: rgba(8, 9, 11, 0.72);
+  backdrop-filter: blur(6px);
+}
+
+[cmdk-dialog] {
+  position: fixed;
+  left: 50%;
+  top: 14%;
+  z-index: 101;
+  width: min(92vw, 680px);
+  transform: translateX(-50%);
+  border: 1px solid var(--line-strong);
+  background: var(--surface);
+  box-shadow: 0 30px 90px rgba(0, 0, 0, 0.45);
+}
+
+[cmdk-item][data-selected="true"] {
+  background: var(--surface-2);
+  color: var(--ink);
+}
+
+/*
+ * Motion is a preference, not a suggestion: these declarations must beat
+ * utility-level durations and inline styles, so !important is the one place in
+ * the stylesheet where it is correct. `noImportantStyles` is disabled for this
+ * file in biome.json with the same rationale.
+ */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

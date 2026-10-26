@@ -1,0 +1,44 @@
+flowchart TB
+  subgraph visitor["Your machine"]
+    B["Browser<br/>localStorage profile"]
+    CLI["curl / SDK<br/>packages/sdk"]
+  end
+
+  subgraph vercel["Vercel · primary"]
+    EDGE["Edge network<br/>TLS · rewrites · headers"]
+    NEXT["Next.js server<br/>95 URLs · 8 API handlers"]
+    STATIC["Static output<br/>RSC payload · SVG · manifest"]
+  end
+
+  subgraph selfhost["Self-hosted · optional"]
+    DOCKER["Docker image<br/>node:22-alpine · uid 1001"]
+    FLY["Fly.io<br/>bom · shared-cpu-1x"]
+    RENDER["Render<br/>singapore · free plan"]
+  end
+
+  subgraph absent["Deliberately absent"]
+    DB[("database")]
+    AUTH["auth provider"]
+    FEED["live threat feed"]
+    LLM["LLM API"]
+  end
+
+  B -->|HTTPS| EDGE
+  CLI -->|HTTPS| EDGE
+  EDGE --> NEXT
+  NEXT --> STATIC
+  B -.->|"profile stays here"| B
+  DOCKER --> NEXT
+  FLY --> DOCKER
+  RENDER --> DOCKER
+  NEXT -.->|"never"| DB
+  NEXT -.->|"never"| AUTH
+  NEXT -.->|"never"| FEED
+  NEXT -.->|"never"| LLM
+
+  classDef client fill:#0f1114,stroke:#f0a63c,color:#f2eee4
+  classDef host fill:#0f1114,stroke:#8fb996,color:#f2eee4
+  classDef none fill:#0f1114,stroke:#e5644a,color:#f2eee4,stroke-dasharray: 5 5
+  class B,CLI client
+  class EDGE,NEXT,STATIC,DOCKER,FLY,RENDER host
+  class DB,AUTH,FEED,LLM none

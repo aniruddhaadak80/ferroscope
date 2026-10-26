@@ -1,0 +1,56 @@
+# dependencies
+node_modules/
+.pnp
+.pnp.js
+
+# builds
+.next/
+out/
+dist/
+build/
+.turbo/
+*.tsbuildinfo
+
+# tests
+coverage/
+playwright-report/
+test-results/
+blob-report/
+.playwright/
+
+# env
+.env
+.env.local
+.env.*.local
+*.local
+
+# deploy
+.vercel/
+.netlify/
+
+# tooling
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/*
+!.vscode/extensions.json
+*.log
+npm-debug.log*
+yarn-debug.log*
+bun-error.log
+
+# python
+__pycache__/
+*.py[cod]
+.venv/
+.pytest_cache/
+
+# go
+services/relay/relay
+services/relay/relay.exe
+
+# generated scale artifacts (kept out of git, reproducible)
+generated/
+
+# local Playwright browsers (this host's cache is unstable)
+.playwright-browsers/

@@ -1,0 +1,24 @@
+gitGraph
+  commit id: "scaffold"
+  commit id: "core: matcher + tests"
+  branch data/dataset
+  checkout data/dataset
+  commit id: "27 incidents"
+  commit id: "24 actions"
+  commit id: "8 playbooks"
+  checkout main
+  merge data/dataset tag: "0.1.0-dataset"
+  branch feat/web
+  checkout feat/web
+  commit id: "routes: 95"
+  commit id: "graph + cascade"
+  commit id: "profile store"
+  checkout main
+  merge feat/web
+  branch docs/adr
+  checkout docs/adr
+  commit id: "6 ADRs"
+  commit id: "guides + runbooks"
+  checkout main
+  merge docs/adr tag: "0.1.0"
+  commit id: "deploy: vercel prod"

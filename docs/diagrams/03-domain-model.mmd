@@ -1,0 +1,64 @@
+erDiagram
+  EXPOSURE_PROFILE ||--o{ PROFILE_STACK : declares
+  STACK_ITEM ||--o{ PROFILE_STACK : "selected as"
+  STACK_ITEM ||--o{ INCIDENT_SURFACE : "appears in"
+  INCIDENT ||--o{ INCIDENT_SURFACE : affects
+  INCIDENT ||--o{ INCIDENT_SOURCE : cites
+  INCIDENT ||--o{ TIMELINE_ENTRY : "ordered by"
+  INCIDENT ||--o{ INCIDENT_MITIGATION : "reduced by"
+  REMEDIATION_ACTION ||--o{ INCIDENT_MITIGATION : mitigates
+  INCIDENT ||--o{ INCIDENT_MATCH : "matched against"
+  EXPOSURE_PROFILE ||--o{ INCIDENT_MATCH : produces
+  INCIDENT_MATCH ||--|| EXPOSURE_REPORT : aggregates
+  REMEDIATION_ACTION ||--o{ ACTION_PLAN : "ranked as"
+  EXPOSURE_REPORT ||--o{ ACTION_PLAN : "scopes"
+
+  EXPOSURE_PROFILE {
+    string[] stack
+    string region
+    boolean bank
+    boolean passwordManager
+    boolean twoFactor
+    boolean autoUpdates
+  }
+  STACK_ITEM {
+    string id PK
+    string label
+    string category
+    float riskWeight
+    boolean defaultOn
+  }
+  INCIDENT {
+    string slug PK
+    string name
+    string severity
+    float cvss
+    string vector
+    string disclosedAt
+    string[] regions
+    string[] affected
+    string[] mitigations
+  }
+  INCIDENT_MATCH {
+    boolean matched
+    float confidence
+    string effectiveSeverity
+    int contribution
+  }
+  EXPOSURE_REPORT {
+    int risk
+    int score
+    string band
+    int examinedStack
+  }
+  REMEDIATION_ACTION {
+    string id PK
+    int minutes
+    float reduces
+    string category
+  }
+  ACTION_PLAN {
+    int riskReduced
+    float efficiency
+    boolean completed
+  }

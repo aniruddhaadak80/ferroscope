@@ -1,0 +1,55 @@
+name: Dataset correction
+description: An incident, source, date, severity, or affected surface is wrong.
+title: "data: "
+labels: ["dataset", "needs-triage"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        The dataset is versioned like code. Every correction needs a public source; without one
+        it cannot land, because the whole product is an argument about evidence.
+  - type: input
+    id: incident
+    attributes:
+      label: Incident slug or name
+      placeholder: emudhra, php2shell, sbi
+    validations:
+      required: true
+  - type: dropdown
+    id: field
+    attributes:
+      label: What is wrong
+      options:
+        - Date or disclosure window
+        - Severity or CVSS
+        - Affected stack surfaces
+        - Summary or exposure note
+        - Timeline entry
+        - Indicator of compromise
+        - Source URL
+        - Something is missing from the dataset
+    validations:
+      required: true
+  - type: textarea
+    id: correction
+    attributes:
+      label: The correction
+      description: State the current value and the value it should be.
+    validations:
+      required: true
+  - type: textarea
+    id: sources
+    attributes:
+      label: Public sources
+      description: At least one URL a reviewer can open. Vendor advisory, CVE, or primary reporting.
+    validations:
+      required: true
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: Confirmation
+      options:
+        - label: I have read the exposure note and understand the correction changes scores for existing profiles.
+          required: true
+        - label: The source is public and not paywalled.
+          required: true

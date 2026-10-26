@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="180" height="180" viewBox="0 0 180 180" role="img" aria-label="Ferroscope">
+  <rect width="180" height="180" fill="#08090b"/>
+  <rect x="0.5" y="0.5" width="179" height="179" stroke="#f2eee4" stroke-opacity="0.22"/>
+  <circle cx="90" cy="90" r="51" stroke="#f2eee4" stroke-opacity="0.2"/>
+  <circle cx="90" cy="90" r="30" stroke="#f0a63c" stroke-width="4"/>
+  <circle cx="90" cy="90" r="8" fill="#f0a63c"/>
+  <path d="M90 15v30M90 135v30M15 90h30M135 90h30" stroke="#f0a63c" stroke-width="4"/>
+</svg>

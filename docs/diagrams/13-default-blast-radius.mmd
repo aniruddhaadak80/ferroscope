@@ -1,0 +1,49 @@
+flowchart LR
+  YOU(("YOU<br/>default laptop<br/>17 declared"))
+
+  subgraph path["On the path · 2 of 27"]
+    EMU["eMudhra root<br/>critical · CA · +33"]
+    SBI["State Bank of India<br/>high · banking · +25"]
+  end
+
+  subgraph near["Near misses · one step away"]
+    LITE["LiteLLM<br/>critical · supply chain"]
+    PHP["PHP2Shell<br/>critical · web server"]
+    RAIL["Railway<br/>critical · hosting"]
+  end
+
+  subgraph declared["Declared surfaces"]
+    PY["Python 3.13<br/>certifi 2026.07.22"]
+    EDGE["Edge"]
+    BRAVE["Brave"]
+    WIN["Windows 11"]
+    GH["GitHub + Actions"]
+    VCL["Vercel"]
+    NPM["npm"]
+    PYP["PyPI"]
+  end
+
+  YOU --> PY
+  YOU --> EDGE
+  YOU --> BRAVE
+  YOU --> WIN
+  YOU --> GH
+  YOU --> VCL
+  YOU --> NPM
+  YOU --> PYP
+  PY ==>|"trusts root"| EMU
+  YOU ==>|"bank in IN"| SBI
+  EDGE -.->|"blocked intermediate"| EMU
+  BRAVE -.->|"blocked intermediate"| EMU
+  NPM -.->|"if lockfile absent"| LITE
+  VCL -.->|"control plane"| RAIL
+  WIN -.->|"if unpatched"| PHP
+
+  classDef self fill:#f0a63c,stroke:#f0a63c,color:#08090b
+  classDef hit fill:#0f1114,stroke:#e5644a,color:#f2eee4,stroke-width:2px
+  classDef near fill:#0f1114,stroke:#f0a63c,color:#f2eee4,stroke-dasharray: 4 4
+  classDef stack fill:#0f1114,stroke:#9a9b9e,color:#f2eee4
+  class YOU self
+  class EMU,SBI hit
+  class LITE,PHP,RAIL near
+  class PY,EDGE,BRAVE,WIN,GH,VCL,NPM,PYP stack

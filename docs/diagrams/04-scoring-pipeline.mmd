@@ -1,0 +1,31 @@
+flowchart TD
+  P["ExposureProfile<br/>stack · region · 4 flags"] --> M{"affected ∩ declared<br/>non-empty?"}
+  M -->|yes| C["confidence = 0.55 + 0.45 × coverage"]
+  M -->|no| R{"no surface by design?"}
+  R -->|"banking + bank + region"| C9["confidence = 0.90"]
+  R -->|"data-breach / state-actor + region"| C6["confidence = 0.60"]
+  R -->|no| Z["not matched · raw = 0"]
+
+  C --> MIT
+  C9 --> MIT
+  C6 --> MIT
+  MIT["mitigation = min(0.80, Σ controls)<br/>2FA +0.22 · manager +0.18 · updates +0.25"]
+  MIT --> W["weight = mean riskWeight of present"]
+  W --> RAW["raw = severity × weight × confidence × (1 − mitigation)"]
+  RAW --> SUM["Σ raw across matched incidents"]
+  SUM --> SAT["risk = round(100 × (1 − e^(−0.55 × Σ raw)))"]
+  SAT --> BAND{"band"}
+  BAND -->|"0–19"| F["fortified"]
+  BAND -->|"20–44"| W2["watchful"]
+  BAND -->|"45–69"| E["exposed"]
+  BAND -->|"70–100"| CR["critical"]
+  SAT --> SCORE["score = 100 − risk"]
+
+  classDef input fill:#0f1114,stroke:#9a9b9e,color:#f2eee4
+  classDef decision fill:#0f1114,stroke:#f0a63c,color:#f2eee4
+  classDef math fill:#0f1114,stroke:#e5644a,color:#f2eee4
+  classDef out fill:#0f1114,stroke:#8fb996,color:#f2eee4
+  class P input
+  class M,R,BAND decision
+  class C,C9,C6,MIT,W,RAW,SUM,SAT math
+  class F,W2,E,CR,SCORE,Z out

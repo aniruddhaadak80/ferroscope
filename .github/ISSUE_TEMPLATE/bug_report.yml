@@ -1,0 +1,73 @@
+name: Bug report
+description: Something renders wrong, a number looks impossible, or a route fails.
+title: "bug: "
+labels: ["bug", "needs-triage"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for taking the time. Ferroscope has no telemetry, so this report is the only
+        signal available. Please avoid pasting secrets, tokens, or anything from your own
+        localStorage beyond the stack ids you are comfortable sharing.
+  - type: dropdown
+    id: surface
+    attributes:
+      label: Where
+      options:
+        - A page route
+        - An API route
+        - The exposure model (numbers look wrong)
+        - The dataset (an incident is inaccurate)
+        - Build, Docker, or deployment
+        - Accessibility
+        - Other
+    validations:
+      required: true
+  - type: input
+    id: route
+    attributes:
+      label: Route or file
+      placeholder: /planner, /api/exposure, packages/core/src/exposure.ts
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected
+      description: What did you think would happen, and why?
+    validations:
+      required: true
+  - type: textarea
+    id: actual
+    attributes:
+      label: Actual
+      description: What happened instead? Include the number you saw and the number you expected.
+    validations:
+      required: true
+  - type: textarea
+    id: repro
+    attributes:
+      label: Steps to reproduce
+      placeholder: |
+        1. Open /profile
+        2. Select ...
+        3. Read the risk number
+    validations:
+      required: true
+  - type: input
+    id: profile
+    attributes:
+      label: Profile fingerprint (optional)
+      description: The stack ids, region, and hygiene flags. Never paste the raw localStorage blob.
+  - type: dropdown
+    id: browser
+    attributes:
+      label: Browser
+      options: [Chromium, Firefox, Safari, Edge, Other, Not a browser issue]
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: Before submitting
+      options:
+        - label: I searched existing issues.
+          required: true
+        - label: This is not a security vulnerability (those go to SECURITY.md, privately).
+          required: true

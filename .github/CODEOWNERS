@@ -1,0 +1,6 @@
+# Default owners. Reviews are not a gate on this project, but they route the
+# right eyes at the parts where a mistake is expensive.
+* @aniruddhaadak80
+
+/packages/core/ @aniruddhaadak80
+/packages/seed/ @aniruddhaadak80
