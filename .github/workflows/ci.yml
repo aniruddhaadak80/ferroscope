@@ -52,6 +52,8 @@ jobs:
           NEXT_PUBLIC_SITE_URL: https://ferroscope.vercel.app
       - name: Report route count
         run: bun scripts/count-routes.mjs
+      - name: Check stylesheet wiring
+        run: bun run check:css
       - uses: actions/upload-artifact@v4
         with:
           name: next-build

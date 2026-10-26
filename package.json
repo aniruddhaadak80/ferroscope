@@ -19,7 +19,8 @@
     "test:e2e": "playwright test",
     "loc": "bun scripts/loc-count.mjs",
     "assets": "bun scripts/gen-assets.mjs",
-    "verify": "bun run typecheck && bun run lint && bun run test && bun run build",
+    "check:css": "bun scripts/check-css.mjs",
+    "verify": "bun run typecheck && bun run lint && bun run test && bun run build && bun run check:css",
     "ci": "bun run verify"
   },
   "devDependencies": {

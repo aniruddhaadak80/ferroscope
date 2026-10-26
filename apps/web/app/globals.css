@@ -2,7 +2,8 @@
 
 @custom-variant dark (&:where(.dark, .dark *));
 
-@source "../../packages/ui/src";
+/* Paths are relative to this file: app -> web -> apps -> repo root. */
+@source "../../../packages/ui/src";
 @source "./**/*.{ts,tsx}";
 
 :root {
