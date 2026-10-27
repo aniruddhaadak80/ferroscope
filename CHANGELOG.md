@@ -14,6 +14,16 @@ A report is only reproducible against the pair it names.
 
 ## [Unreleased]
 
+### Fixed
+
+- `@source` in `globals.css` pointed at `apps/packages/ui/src`, which does not exist. Local builds hid it
+  because Tailwind's automatic content detection walked up from the real `.git` root; the Vercel build
+  has no `.git`, so utilities used only inside `@ferroscope/ui` were dropped and the grain layer lost
+  `position: fixed`, pushing the header 150px down the page. `scripts/check-css.mjs` now fails the build
+  when a `@source` path does not resolve or the compiled stylesheet is missing those utilities.
+- `/og` renders on the Node runtime. The Vercel `services` target rejects Edge Function output, so the
+  Open Graph card could not ship.
+
 ### Planned
 
 - Dataset diffing between two snapshots.

@@ -670,21 +670,22 @@ flowchart LR
 
 ```text
 workspace            files    total     code
-apps/web                63     6812     6307
-packages/core           18     1805     1556
-packages/seed           14     2705     2595
-packages/ui             16     1379     1285
-packages/sdk             7      292      249
-scripts                  3      717      607
-e2e                      4      328      274
-docs                    16     1350      879
-.github                  8      391      359
-root docs                4      520      311
+apps/web                64     7100     6566
+packages/core           18     1807     1558
+packages/seed           14     2742     2628
+packages/ui             16     1443     1349
+packages/sdk             7      301      258
+packages/config          4       56       51
+scripts                  5      938      772
+e2e                      4      358      295
+docs                    16     1330      880
+.github                  8      393      361
+root docs                5     1412     1024
 ────────────────────────────────────────────────
-total                  156    16347    14465
+total                  161    17880    15742
 ```
 
-**14,465 lines of code, 16,347 lines including blanks.** That is the complete product: engine, dataset,
+**15,742 lines of code, 17,880 lines including blanks.** That is the complete product: engine, dataset,
 design system, 95 routes, tests, docs, and deployment. It is not a million-line codebase and this
 README will not pretend otherwise. Run `bun run loc` to reproduce the table; generated output,
 lockfiles, and `node_modules` are excluded by the script.
