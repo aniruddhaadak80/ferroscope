@@ -639,7 +639,7 @@ flowchart LR
   Q --> L["lint<br/>biome check"]
   L --> T["test<br/>81 vitest"]
   T --> B["build<br/>next build · 95 routes"]
-  B --> E["e2e<br/>playwright · chromium + firefox"]
+  B --> E["e2e<br/>playwright · chromium + firefox + mobile"]
   B --> D["docker<br/>standalone image"]
   D --> DS["container smoke<br/>/api/healthz"]
   E --> OK{"all green?"}
