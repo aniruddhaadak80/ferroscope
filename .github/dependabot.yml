@@ -1,7 +1,9 @@
 version: 2
 
 updates:
-  - package-ecosystem: npm
+  # The repo installs with Bun and ships a bun.lock, so the npm ecosystem refuses
+  # to run ("npm_and_yarn cannot update bun.lock"). Bun is the supported updater.
+  - package-ecosystem: bun
     directory: /
     schedule:
       interval: weekly
