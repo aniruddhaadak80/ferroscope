@@ -1,5 +1,5 @@
 import { ThemeToggle } from "@ferroscope/ui";
-import { Github } from "lucide-react";
+import { GithubIcon } from "@/components/BrandIcons";
 import Link from "next/link";
 import { CommandTrigger } from "@/components/command-palette";
 import { FerroMark } from "@/components/ferro-mark";
@@ -43,7 +43,7 @@ export function SiteHeader() {
             aria-label="Ferroscope on GitHub"
             className="hidden h-8 w-8 items-center justify-center border border-line text-muted transition-colors hover:border-amber hover:text-amber sm:flex"
           >
-            <Github size={14} />
+            <GithubIcon size={14} />
           </a>
           <details className="group relative lg:hidden">
             <summary className="flex h-8 cursor-pointer list-none items-center border border-line px-2.5 font-mono text-[9px] uppercase tracking-[0.16em] text-muted marker:content-none hover:text-ink">

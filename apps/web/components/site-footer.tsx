@@ -1,4 +1,4 @@
-import { Github } from "lucide-react";
+import { GithubIcon } from "@/components/BrandIcons";
 import Link from "next/link";
 import { FerroMark } from "@/components/ferro-mark";
 import { FOOTER_NAV } from "@/lib/nav";
@@ -28,7 +28,7 @@ export function SiteFooter() {
                 className="flex h-8 w-8 items-center justify-center border border-line text-muted hover:border-amber hover:text-amber"
                 aria-label="GitHub"
               >
-                <Github size={14} />
+                <GithubIcon size={14} />
               </a>
               <a
                 href="https://dev.to/aniruddhaadak"
