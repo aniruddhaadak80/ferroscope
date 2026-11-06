@@ -1,5 +1,5 @@
-import { GithubIcon } from "@/components/BrandIcons";
 import Link from "next/link";
+import { GithubIcon } from "@/components/BrandIcons";
 import { FerroMark } from "@/components/ferro-mark";
 import { FOOTER_NAV } from "@/lib/nav";
 

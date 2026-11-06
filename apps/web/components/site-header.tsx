@@ -1,6 +1,6 @@
 import { ThemeToggle } from "@ferroscope/ui";
-import { GithubIcon } from "@/components/BrandIcons";
 import Link from "next/link";
+import { GithubIcon } from "@/components/BrandIcons";
 import { CommandTrigger } from "@/components/command-palette";
 import { FerroMark } from "@/components/ferro-mark";
 import { PRIMARY_NAV } from "@/lib/nav";
