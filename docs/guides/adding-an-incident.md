@@ -89,6 +89,7 @@ grep -rn "27 incidents\|27-incident\|\\b27\\b" apps packages --include=*.tsx --i
 ```
 
 Places that usually need a edit:
+
 - `packages/seed/src/dataset.test.ts` — the expected incident count
 - `apps/web/app/page.tsx` — hero statistics
 - `apps/web/app/atlas/page.tsx` — header and stats strip
@@ -121,6 +122,7 @@ bun run dev
 
 Use the dataset correction template if you are fixing an existing incident, or a normal PR with the
 `data:` prefix if you are adding one. Include:
+
 - The public sources, pasted as links (not screenshots)
 - What changed in the score for the default profile, if anything
 - A note if the incident is likely to be reclassified

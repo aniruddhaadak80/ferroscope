@@ -26,6 +26,7 @@ request body, run pure functions, and return a report. Nothing is written, logge
 server-side.
 
 Concretely:
+
 - `apps/web/lib/store.ts` — zustand + `persist`, `partialize` limits storage to `profile` and
   `completed`.
 - Every `/api/*` handler validates with zod and calls into `packages/core`.
@@ -41,6 +42,7 @@ server and client markup identical.
 ## Consequences
 
 **Good**
+
 - A breach of the deployment cannot leak a single profile. There is nothing to leak.
 - The product works offline after first load, and in a Docker container with no outbound network.
 - No auth means no password reset, no session fixation, no OAuth misconfiguration, no GDPR data
@@ -48,6 +50,7 @@ server and client markup identical.
 - Hosting is cheap enough to stay free.
 
 **Bad**
+
 - Profiles do not follow a person across devices. This is stated in the UI rather than hidden.
 - Clearing site data deletes the profile. Export exists for that reason.
 - Server-side aggregation is impossible. There is no "12,000 developers are exposed to X" statistic,

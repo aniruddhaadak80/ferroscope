@@ -44,6 +44,7 @@ it usually cost?_ It feeds the weighted average in `exposure.ts`.
 | 0.10–0.39 | Peripheral. Included so the graph is honest, not to move the score      | Note-taking apps, media players                    |
 
 Two rules:
+
 1. **Do not use 1.0 casually.** It is reserved for a compromise that invalidates trust itself.
 2. **Stay consistent with neighbours.** If NGINX is 0.72, Apache should be within 0.05.
 

@@ -31,6 +31,7 @@ Every decision that is expensive to reverse gets a numbered record in `docs/adr/
 ```
 
 Rules:
+
 1. Records are immutable once accepted. A reversal is a new record that supersedes the old one.
 2. The number is permanent, even if the decision is later undone.
 3. Code comments may link to an ADR, but the ADR must stand alone.

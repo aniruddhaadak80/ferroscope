@@ -14,6 +14,7 @@ healthy community.
 ## Our standards
 
 Examples of behaviour that contributes to a positive environment:
+
 - Demonstrating empathy and kindness toward other people
 - Being respectful of differing opinions, viewpoints, and experiences
 - Giving and gracefully accepting constructive feedback
@@ -22,6 +23,7 @@ Examples of behaviour that contributes to a positive environment:
 - Focusing on what is best not just for us as individuals, but for the overall community
 
 Examples of unacceptable behaviour:
+
 - The use of sexualised language or imagery, and sexual attention or advances of any kind
 - Trolling, insulting or derogatory comments, and personal or political attacks
 - Public or private harassment
@@ -33,6 +35,7 @@ Examples of unacceptable behaviour:
 
 Ferroscope discusses real breaches, real companies, and real people affected by them. Contributors
 are expected to:
+
 - Discuss incidents as engineering events, not as opportunities for mockery.
 - Never publish personal data of breach victims, including in dataset contributions.
 - Avoid speculation presented as fact. If a claim is unconfirmed, the dataset marks it `watchlist`.

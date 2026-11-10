@@ -7,6 +7,7 @@
 ## Context
 
 Three capabilities are almost default in 2026 products, and all three were considered seriously:
+
 1. **An LLM to summarise incidents** and personalise the exposure note.
 2. **Analytics** to see which routes people actually use.
 3. **A live feed** so the atlas stays current without a release.
@@ -51,12 +52,14 @@ feed silently changes the meaning of a saved PDF. Freshness is traded for audita
 ## Consequences
 
 **Good**
+
 - The whole product is inspectable in an afternoon: no hidden prompt, no vendor, no data flow.
 - Deterministic output makes screenshots, tests, and reports trustworthy.
 - Deployment needs no keys, so a fork works immediately and CI cannot leak a secret.
 - The ethical claim on `/about` is true rather than aspirational.
 
 **Bad**
+
 - The dataset ages. Mitigation: version it, date it, and invite corrections through a template that
   requires a source.
 - No usage data means prioritisation is judgement, not measurement. Accepted for a single-maintainer

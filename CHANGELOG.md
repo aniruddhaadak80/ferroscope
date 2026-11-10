@@ -5,6 +5,7 @@ All notable changes to Ferroscope are recorded here. The format follows
 [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 Two versions travel together:
+
 - **App version** — semver, the code.
 - **Dataset version** — a date, because the incident set is a snapshot.
 

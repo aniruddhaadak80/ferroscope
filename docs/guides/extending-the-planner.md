@@ -105,6 +105,7 @@ bun run --filter @ferroscope/seed test
 ```
 
 Then add an assertion for anything you care about. The existing suite pins:
+
 - the first-ranked action on the default profile
 - descending efficiency
 - `riskReduced ≤ report.risk`

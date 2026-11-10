@@ -8,6 +8,7 @@
 
 The product needs one number that answers "how bad is this for me?" without pretending to be a
 probability. Three naive options were available:
+
 1. **Count matches.** `n / 27 × 100`. Simple, but treats a critical CA compromise and a low-severity
    browser bug as equal.
 2. **Sum CVSS.** Familiar, but CVSS describes a vulnerability in the abstract, not whether _this_
