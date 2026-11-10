@@ -426,6 +426,7 @@ flowchart TD
 ```
 
 Three properties matter more than the constants:
+
 - **`confidence` is a coverage fraction, not a probability.** Running all four affected components
   scores 1.0; one of four scores 0.6625.
 - **Mitigation is capped at 0.80.** Ticking every hygiene box cannot produce a zero, because none of
@@ -795,6 +796,7 @@ gantt
 
 Four things will never ship, and they are on [`/roadmap`](https://ferroscope.vercel.app/roadmap) next
 to the features:
+
 - **No account system.** A security tool that asks for your email before telling you anything is a
   lead-generation form.
 - **No LLM summarisation.** An explanation that changes between runs cannot be audited.
@@ -833,6 +835,7 @@ gitGraph
 ```
 
 The most useful contributions, in order:
+
 1. **A dataset correction with a source.** The atlas ages; corrections keep it honest.
 2. **An accessibility fix.** The axe suite runs, but it only catches what axe can see.
 3. **A playbook step that assumes less.** Every procedure should work for someone with no security

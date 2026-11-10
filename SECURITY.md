@@ -6,6 +6,7 @@ Ferroscope is a **static analytical instrument**. It has no database, no account
 no server-side storage of user profiles. The attack surface is therefore small, but it is not zero.
 
 In scope:
+
 - The Next.js app and its API routes (`apps/web`)
 - The engine and dataset packages (`packages/*`)
 - The Docker image and deployment configuration
@@ -13,6 +14,7 @@ In scope:
 - Any path that could cause a declared profile to leave the browser without consent
 
 Out of scope:
+
 - The accuracy of third-party incident reporting (use the dataset correction template instead)
 - Findings that require a compromised browser, OS, or physical access
 - Denial of service through volumetric traffic (Vercel and Fly absorb this at the edge)
@@ -26,6 +28,7 @@ Use GitHub's private vulnerability reporting:
 <https://github.com/aniruddhaadak80/ferroscope/security/advisories/new>
 
 Include:
+
 - The affected route, file, or package
 - A reproduction that does not require your real profile
 - Impact: what an attacker gains, and what they need first
@@ -48,6 +51,7 @@ be.
 ## Deployment hardening
 
 The shipped configurations already do the following:
+
 - `X-Content-Type-Options: nosniff`, `Referrer-Policy: strict-origin-when-cross-origin`, and a
   restrictive `Permissions-Policy` via `vercel.json`
 - `poweredByHeader: false` in `next.config.ts`

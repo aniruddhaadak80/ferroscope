@@ -7,6 +7,7 @@
 ## Context
 
 The product has three genuinely separable concerns:
+
 1. **An engine** that must be testable without React, without Next, and without a browser.
 2. **A dataset** that must be reviewable as data, not buried in components.
 3. **A presentation layer** with more than twenty routes, a design system, and interactive views.

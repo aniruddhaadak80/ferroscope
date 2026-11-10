@@ -17,6 +17,7 @@ same data.
 ## Decision
 
 **Every function in `packages/core` is pure and deterministic.**
+
 - No `Math.random()`, no `Date.now()`, no locale-dependent formatting, no iteration over unsorted
   `Set` or `Map` without sorting first.
 - Graph positions come from polar coordinates plus a jitter derived from an **FNV-1a hash of the node

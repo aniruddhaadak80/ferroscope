@@ -44,6 +44,7 @@ If a build fails with "No Next.js version detected", the `services.web.root` val
 point at `apps/web`, not the repository root.
 
 Two constraints come with the services layout, and both have already cost one deploy each:
+
 - **No Edge Functions.** A route with `export const runtime = "edge"` fails the deploy with
   "Edge Runtime is not supported in services". `/og` therefore runs on the Node runtime; `ImageResponse`
   behaves the same there.
@@ -65,6 +66,7 @@ curl -fsS "https://$URL/sitemap.xml" | grep -o "<loc>" | wc -l      # 56: 21 sta
 ```
 
 Then check the four things a status code cannot tell you:
+
 1. **Dark and light** — toggle in the header; both palettes must be legible.
 2. **A full interaction** — `/profile`, toggle a component, watch the declared count change.
 3. **A reload** — the profile persists (localStorage).

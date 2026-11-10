@@ -15,6 +15,7 @@ bun run build
 ```
 
 What the suite already guarantees:
+
 - Exactly 27 incidents, matching the published count
 - Every `affected` id resolves to a stack item
 - Every `mitigations` id resolves to an action
@@ -25,6 +26,7 @@ What the suite already guarantees:
 ## 2. Source hygiene
 
 For each incident you touched, open every source. Then confirm:
+
 - [ ] The URL resolves without a login or a paywall
 - [ ] The page still says what the `summary` claims
 - [ ] The `disclosedAt` date matches the source, in UTC
@@ -56,6 +58,7 @@ for (const s of ["critical","high","medium","low"]) {
 ```
 
 Red flags:
+
 - A critical with `cvss: null` and no explanation
 - A low-severity incident whose `exposureNote` says "act now"
 - Two incidents of the same severity where one is clearly a footnote and the other is a root CA
@@ -65,6 +68,7 @@ Severity is **impact if you are on the path**, not global newsworthiness.
 ## 4. Exposure notes
 
 Read every note you changed and ask three questions:
+
 1. Does it name a condition the reader can evaluate? ("If you install without a lockfile…")
 2. Does it avoid claiming compromise? ("exposed", never "breached")
 3. Does it tell the reader what to do, or explicitly say nothing is required?
@@ -82,6 +86,7 @@ for (const i of INCIDENTS.filter(i => i.affected.length === 0)) {
 ```
 
 Incidents with no stack surface match by region. Verify that:
+
 - `banking` incidents require `profile.bank` (they do, in `matchIncident`)
 - `data-breach` and `state-actor` match on region alone
 - A `global` region never triggers the regional branch (`isRegional` returns false)
@@ -119,6 +124,7 @@ exposure moved.
 ## 8. Sign-off
 
 Record in the PR:
+
 - Which incidents changed and why
 - The default profile delta (risk before → after)
 - Any source that has gone dark and how you replaced it

@@ -85,6 +85,7 @@ page.
 ## Adding an incident
 
 This is the most common contribution. The short version:
+
 1. Add the record to the right file in `packages/seed/src/`:
    - `incidents-48h.ts` for the two-day wave
    - `incidents-month.ts` for month-scale context
@@ -128,6 +129,7 @@ packages/core/src/cascade.ts    twelve-frame narrative
 ```
 
 Rules:
+
 - **Pure functions only.** No `Date.now()`, no `Math.random()`, no I/O.
 - **Determinism is testable.** If output depends on iteration order, sort first.
 - **Pin the numbers.** A scoring change updates `packages/core/src/*.test.ts` with the new expected
@@ -176,6 +178,7 @@ Branch names: `feat/…`, `fix/…`, `data/…`, `docs/…`.
 ## Review
 
 A review checks four things, in order:
+
 1. **Is the claim true?** Numbers, sources, and dates.
 2. **Is it deterministic?** Same input, same output.
 3. **Does it respect the refusals?** No account, no feed, no LLM, no telemetry.
